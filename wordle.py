@@ -146,7 +146,6 @@ def prepare_game():
     return secret_word, valid_words
 
 
-# TODO: Modify this function. You may delete this comment when you are done.
 def is_valid_guess(guess, valid_guesses):
     """
     Checks if a given guess is valid.
@@ -156,16 +155,8 @@ def is_valid_guess(guess, valid_guesses):
           being a valid 5 letter lowercase guess.
     post: returns a boolean value
     """
-    # Check if secret word is in the list of them. If it is, use the valid guesses, if not then check the way I did below
-    
-    # if guess.isalpha() and guess.islower() and len(guess) == 5:
-    #     return True
-    # else:
-    #     return False
     return guess in valid_guesses
 
-
-# TODO: Modify this function. You may delete this comment when you are done.
 def get_feedback(secret_word, guessed_word):
     """
     Processes the guess and generates the colored feedback based on the secret
