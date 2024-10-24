@@ -203,6 +203,7 @@ def main():
         next_line = input()
         coeff_and_exp = next_line.split(" ")
         p.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
+    input()
     q = LinkedList()
     m = int(input())
     for i in range(m):
