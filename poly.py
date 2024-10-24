@@ -113,7 +113,7 @@ class LinkedList:
     def insert_term(self, coeff, exp):
         '''Inserts the term with the coefficient coeff and exponent exp into the polynomial.
         '''
-        if(coeff is 0 or exp < 0):
+        if(coeff == 0 or exp < 0):
             return
         current = self.dummy.next
         previous = self.dummy
