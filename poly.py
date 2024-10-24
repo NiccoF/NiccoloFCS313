@@ -209,7 +209,7 @@ def main():
     for i in range(m):
         next_line = input()
         coeff_and_exp = next_line.split(" ")
-        p.insert_term(coeff_and_exp[0], coeff_and_exp[1])
+        p.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
     sum_lists = p.add(q)
     print(sum_lists)
     product = p.mult(q)
