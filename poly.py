@@ -212,10 +212,8 @@ def main():
         p.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
     #sum_lists = p.add(q)
     print(p.mult(q))
-    print(p.add(q))
+    #print(p.add(q))
     #product = p.mult(q)
-    
-
 
 
 if __name__ == "__main__":
