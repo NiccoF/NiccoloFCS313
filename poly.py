@@ -97,6 +97,9 @@ class Node:
 
 
 class LinkedList:
+    '''
+    Implementation of linked list
+    '''
     def __init__(self):
         # You are also welcome to use a sentinel/dummy node!
         # It is definitely recommended, which will we learn more
@@ -113,7 +116,7 @@ class LinkedList:
     def insert_term(self, coeff, exp):
         '''Inserts the term with the coefficient coeff and exponent exp into the polynomial.
         '''
-        if(coeff == 0 or exp < 0):
+        if coeff == 0:
             return
         current = self.dummy.next
         previous = self.dummy
@@ -142,6 +145,9 @@ class LinkedList:
 
     # Add a polynomial p to the polynomial and return the resulting polynomial as a new linked list.
     def add(self, p):
+        '''
+        Adds two polynomials together
+        '''
         return_list = LinkedList()
         current = p.dummy.next
         # Iterate whole p list
@@ -157,6 +163,9 @@ class LinkedList:
 
     # Multiply a polynomial p with the polynomial and return the product as a new linked list.
     def mult(self, p):
+        '''
+        Multiplies two polynomials together
+        '''
         new_list = LinkedList()
         current = self.dummy.next
         # previous = self.dummy
@@ -190,6 +199,9 @@ class LinkedList:
 
 
 def main():
+    ''' Get input data from a file and print the two provided 
+        polynomials added and multiplied together
+    '''
     # read data from stdin using input() and create polynomial p
 
     # read data from stdin using input() and create polynomial q
