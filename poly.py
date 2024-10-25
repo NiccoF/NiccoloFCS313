@@ -200,7 +200,7 @@ def main():
     p = LinkedList()
     n = int(input())
     for i in range(n):
-        next_line = input() 
+        next_line = input()
         coeff_and_exp = next_line.split(" ")
         p.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
     input()
@@ -209,7 +209,7 @@ def main():
     for i in range(m):
         next_line = input()
         coeff_and_exp = next_line.split(" ")
-        p.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
+        q.insert_term(int(coeff_and_exp[0]), int(coeff_and_exp[1]))
     print(p.add(q))
     print(p.mult(q))
 
