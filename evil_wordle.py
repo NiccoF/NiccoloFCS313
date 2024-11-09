@@ -480,6 +480,7 @@ def main():
     print("RIGHTAFTER", valid_guesses)
     while attempt <= attempts:
         print("INSIDE", valid_guesses)
+        print(secret_words)
         attempt_number_string = get_attempt_label(attempt)
         prompt = f"Enter your {attempt_number_string} guess: "
         guess = input(prompt)
@@ -489,7 +490,7 @@ def main():
             print(guess)
 
         if guess not in valid_guesses:
-            print(valid_guesses, guess)
+            print(valid_guesses, guess, secret_words)
             print(INVALID_INPUT)
             continue
 
