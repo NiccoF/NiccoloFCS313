@@ -19,7 +19,7 @@ import random
 import sys
 
 # You may delete this import if you choose not to use this.
-from collections import defaultdict
+# from collections import defaultdict
 
 # ANSI escape codes for text color
 # These must be used by wrapping it around a single character string
@@ -464,8 +464,10 @@ def main():
     """
 
     try:
+        print("GOOD------!!!!!!!!!!!!!")
         valid = prepare_game()
     except ValueError:
+        print("BADDDD------!!!!!!!!!!!!!")
         print(INVALID_INPUT)
         return
 
@@ -487,6 +489,7 @@ def main():
             print(guess)
 
         if guess not in valid_guesses:
+            print("GUESS NOT IN THE VALIDS------!!!!!!!!!!!!!")
             print(INVALID_INPUT)
             continue
 
