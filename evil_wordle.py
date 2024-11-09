@@ -464,10 +464,9 @@ def main():
     """
 
     try:
-        print("GOOD------!!!!!!!!!!!!!")
         valid = prepare_game()
+        print(valid)
     except ValueError:
-        print("BADDDD------!!!!!!!!!!!!!")
         print(INVALID_INPUT)
         return
 
@@ -489,7 +488,7 @@ def main():
             print(guess)
 
         if guess not in valid_guesses:
-            print("GUESS NOT IN THE VALIDS------!!!!!!!!!!!!!")
+            print(valid_guesses, guess)
             print(INVALID_INPUT)
             continue
 
