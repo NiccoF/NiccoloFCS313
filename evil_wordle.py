@@ -480,6 +480,7 @@ def main():
 
     print("RIGHTAFTER", valid_guesses)
     while attempt <= attempts:
+        dummy, valid_guesses = valid
         print("INSIDE", valid_guesses, please)
         print(secret_words)
         attempt_number_string = get_attempt_label(attempt)
