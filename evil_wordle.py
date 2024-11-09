@@ -442,7 +442,7 @@ def get_feedback(remaining_secret_words, guessed_word):
     """
     # Modify this! This is just starter code.
     word_families = []
-    temp_secret_words = remaining_secret_words
+    temp_secret_words = remaining_secret_words[:]
     while len(temp_secret_words) > 0:
         current_words = []
         current_feedback_colors = get_feedback_colors(temp_secret_words[0], guessed_word)
