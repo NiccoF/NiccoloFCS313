@@ -442,14 +442,15 @@ def get_feedback(remaining_secret_words, guessed_word):
     """
     # Modify this! This is just starter code.
     word_families = []
-    while len(remaining_secret_words) > 0:
+    temp_secret_words = remaining_secret_words
+    while len(temp_secret_words) > 0:
         current_words = []
-        current_feedback_colors = get_feedback_colors(remaining_secret_words[0], guessed_word)
-        for word in remaining_secret_words:
+        current_feedback_colors = get_feedback_colors(temp_secret_words[0], guessed_word)
+        for word in temp_secret_words:
             if get_feedback_colors(word, guessed_word) == current_feedback_colors:
                 current_words.append(word)
         for word in current_words:
-            remaining_secret_words.remove(word)
+            temp_secret_words.remove(word)
         word_families.append(WordFamily(current_feedback_colors, current_words))
     word_families = fast_sort(word_families)
     # print(word_families[0].feedback_colors, word_families[0].words)
@@ -471,18 +472,13 @@ def main():
 
     attempts, valid_guesses = valid
     secret_words = valid_guesses
-    please = secret_words
 
     print_explanation(attempts)
 
     keyboard = Keyboard()
     attempt = 1
 
-    print("RIGHTAFTER", valid_guesses)
     while attempt <= attempts:
-        dummy, valid_guesses = valid
-        print("INSIDE", valid_guesses, please)
-        print(secret_words)
         attempt_number_string = get_attempt_label(attempt)
         prompt = f"Enter your {attempt_number_string} guess: "
         guess = input(prompt)
@@ -491,8 +487,7 @@ def main():
         if not sys.stdin.isatty():
             print(guess)
 
-        if guess not in please:
-            print(valid_guesses, guess, secret_words)
+        if guess not in valid_guesses:
             print(INVALID_INPUT)
             continue
 
