@@ -477,9 +477,9 @@ def main():
     keyboard = Keyboard()
     attempt = 1
 
-    print(valid_guesses)
+    print("RIGHTAFTER", valid_guesses)
     while attempt <= attempts:
-        print(valid_guesses)
+        print("INSIDE", valid_guesses)
         attempt_number_string = get_attempt_label(attempt)
         prompt = f"Enter your {attempt_number_string} guess: "
         guess = input(prompt)
