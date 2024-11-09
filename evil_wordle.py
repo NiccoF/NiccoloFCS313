@@ -465,7 +465,6 @@ def main():
 
     try:
         valid = prepare_game()
-        print(valid)
     except ValueError:
         print(INVALID_INPUT)
         return
@@ -478,7 +477,9 @@ def main():
     keyboard = Keyboard()
     attempt = 1
 
+    print(valid_guesses)
     while attempt <= attempts:
+        print(valid_guesses)
         attempt_number_string = get_attempt_label(attempt)
         prompt = f"Enter your {attempt_number_string} guess: "
         guess = input(prompt)
