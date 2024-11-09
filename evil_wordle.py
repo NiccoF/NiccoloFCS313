@@ -471,6 +471,7 @@ def main():
 
     attempts, valid_guesses = valid
     secret_words = valid_guesses
+    please = secret_words
 
     print_explanation(attempts)
 
@@ -479,7 +480,7 @@ def main():
 
     print("RIGHTAFTER", valid_guesses)
     while attempt <= attempts:
-        print("INSIDE", valid_guesses)
+        print("INSIDE", valid_guesses, please)
         print(secret_words)
         attempt_number_string = get_attempt_label(attempt)
         prompt = f"Enter your {attempt_number_string} guess: "
@@ -489,7 +490,7 @@ def main():
         if not sys.stdin.isatty():
             print(guess)
 
-        if guess not in valid_guesses:
+        if guess not in please:
             print(valid_guesses, guess, secret_words)
             print(INVALID_INPUT)
             continue
