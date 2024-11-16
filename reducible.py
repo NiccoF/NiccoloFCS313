@@ -195,7 +195,7 @@ def main():
     # create an empty hash_list
 
     # populate the hash_list with N blank strings
-    hash_list = ["" * n]
+    hash_list = [""] * n
 
     # hash each word in word_list into hash_list
     # for collisions use double hashing
@@ -212,7 +212,7 @@ def main():
         m += 1
 
     # populate the hash_memo with M blank strings
-    hash_memo = ["" * m]
+    hash_memo = [""] * m
 
     # create an empty list reducible_words
     reducible_words = []
