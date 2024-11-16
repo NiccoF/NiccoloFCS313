@@ -119,10 +119,9 @@ def is_reducible(s, hash_table, hash_memo):
           inserting s if reducible), otherwise returns False.
     """
     index = 0
-    length = len(s)
-    return is_reducible_helper(s, hash_table, hash_memo, index, length)
+    return is_reducible_helper(s, hash_table, hash_memo, index)
 
-def is_reducible_helper(s, hash_table, hash_memo, index, length):
+def is_reducible_helper(s, hash_table, hash_memo, index):
     """
     Used to recursively try each combination of letters in s
     to make words
@@ -137,13 +136,13 @@ def is_reducible_helper(s, hash_table, hash_memo, index, length):
         return False
     #Need one path taking away the letter, another path leaving it alone
     #leave
-    if is_reducible_helper(s, hash_table, hash_memo, index + 1, length):
+    if is_reducible_helper(s, hash_table, hash_memo, index + 1):
         if len(s) > 1:
             insert_word(s, hash_memo)
         return True
     #take away
     temp = s[:index] + s[index + 1:]
-    if is_reducible_helper(temp, hash_table, hash_memo, 0, length):
+    if is_reducible_helper(temp, hash_table, hash_memo, 0):
         if len(s) > 1:
             insert_word(s, hash_memo)
         return True
@@ -228,7 +227,7 @@ def main():
             reducible_words.append(word)
 
     # find the largest reducible words in reducible_words
-    largest_reducibles = get_longest_words(reducible_words)
+    # largest_reducibles = get_longest_words(reducible_words)
 
     # print the reducible words in alphabetical order
     # one word per line
