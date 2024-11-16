@@ -207,7 +207,7 @@ def main():
     # let us assume it is 10 percent (fairly safe) of the words
     # then M is a prime number that is slightly greater than
     # 0.2 * size of word_list
-    m = length * 0.2
+    m = (int)(length * 0.2)
     while not is_prime(m):
         m += 1
     print(m)
