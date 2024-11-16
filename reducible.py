@@ -228,11 +228,11 @@ def main():
             reducible_words.append(word)
 
     # find the largest reducible words in reducible_words
-    # largest_reducibles = get_longest_words(reducible_words)
+    largest_reducibles = get_longest_words(reducible_words)
 
     # print the reducible words in alphabetical order
     # one word per line
-    reducible_words.sort()
+    largest_reducibles.sort()
     for word in reducible_words:
         print(word)
 
