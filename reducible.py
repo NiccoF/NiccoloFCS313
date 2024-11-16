@@ -233,7 +233,7 @@ def main():
     # print the reducible words in alphabetical order
     # one word per line
     largest_reducibles.sort()
-    for word in reducible_words:
+    for word in largest_reducibles:
         print(word)
 
 
