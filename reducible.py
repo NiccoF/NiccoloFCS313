@@ -191,7 +191,6 @@ def main():
     n = length * 2
     while not is_prime(n):
         n += 1
-    print(n)
     # create an empty hash_list
 
     # populate the hash_list with N blank strings
@@ -210,7 +209,6 @@ def main():
     m = (int)(length * 0.2)
     while not is_prime(m):
         m += 1
-    print(m)
     # populate the hash_memo with M blank strings
     hash_memo = [""] * m
 
