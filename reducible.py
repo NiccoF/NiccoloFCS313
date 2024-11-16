@@ -76,13 +76,15 @@ def insert_word(s, hash_table):
     """
     insert_index = hash_word(s, len(hash_table))
     i = insert_index
+    index = 0
 
     while hash_table[i] != "":
-        if hash_table[i] == s:
+        if hash_table[i] == s or index > len(hash_table):
             return
         i = (i + step_size(s)) % len(hash_table)
         if i > len(hash_table):
             i = i - len(hash_table)
+        index += 1
     hash_table[i] = s
 
 
@@ -98,8 +100,11 @@ def find_word(s, hash_table):
     """
     find_index = hash_word(s, len(hash_table))
     i = find_index
+    index = 0
 
     while hash_table[i] != "":
+        if index > len(hash_table):
+            return False
         if hash_table[i] == s:
             return True
         i = (i + step_size(s)) % len(hash_table)
@@ -184,10 +189,8 @@ def main():
     # determine prime number N that is greater than twice
     # the length of the word_list
     n = length * 2
-    while True:
+    while not is_prime(n):
         n += 1
-        if is_prime(n):
-            break
 
     # create an empty hash_list
 
@@ -205,10 +208,8 @@ def main():
     # then M is a prime number that is slightly greater than
     # 0.2 * size of word_list
     m = length * 0.2
-    while True:
+    while not is_prime(m):
         m += 1
-        if is_prime(m):
-            break
 
     # populate the hash_memo with M blank strings
     hash_memo = ["" * m]
