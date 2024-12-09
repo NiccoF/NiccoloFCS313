@@ -300,7 +300,6 @@ class ImageGraph:
         self.print_image()
 
         original_color = self.vertices[start_index].color
-        # adj_matrix = self.create_adjacency_matrix
         vert_queue = Queue()
         vert_queue.enqueue(self.vertices[start_index])
         while not vert_queue.is_empty():
@@ -310,8 +309,6 @@ class ImageGraph:
                     edge.color = color
                     vert_queue.enqueue(edge[1])
             current.color = color
-        # for i in adj_matrix[start_index]:
-        #     if i == 1:
 
 
     def dfs(self, start_index, color):
@@ -376,6 +373,7 @@ def create_graph(data):
     # create vertices - vertex info has the format "x,y,color"
     for i in range(num_vertices):
         vert_list = line_list[i+2].split(", ")
+        print(x)
         x = int(vert_list[0])
         y = int(vert_list[1])
         color = vert_list[2]
