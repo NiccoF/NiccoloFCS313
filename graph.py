@@ -384,7 +384,7 @@ def create_graph(data):
         edge_vertex_indexes = line_list[num_vertices + 3 + i].split(",")
         new_graph.vertices[int(edge_vertex_indexes[0])].add_edge(int(edge_vertex_indexes[1]))
     # read search starting position and color
-    last_line_list = line_list[len(line_list) - 1].split(", ")
+    last_line_list = line_list[len(line_list) - 1].split(",")
     start_position = int(last_line_list[0])
     start_color = last_line_list[1]
     # return the ImageGraph, starting position, and color as a tuple in this order.
