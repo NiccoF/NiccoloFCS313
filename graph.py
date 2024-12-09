@@ -70,26 +70,31 @@ class Node:
 
 
 class StackError(Exception):
-    pass
+    """StackError"""
+    # pass
 
 
 class Stack:
+    """Stack"""
     def __init__(self):
         self._top = None
         self._size = 0
 
     def peek(self):
+        """shows what item is on top"""
         if self.is_empty():
             raise StackError("Peek from empty stack.")
         return self._top.data
 
     def push(self, item):
+        """places an item on top"""
         new_node = Node(item)
         new_node.next = self._top
         self._top = new_node
         self._size += 1
 
     def pop(self):
+        """returns the top item"""
         if self.is_empty():
             raise StackError("Pop from empty stack.")
         removed_data = self._top.data
@@ -98,14 +103,17 @@ class Stack:
         return removed_data
 
     def is_empty(self):
+        """if it's empty"""
         return self._top is None
 
     def size(self):
+        """returns number of elements"""
         return self._size
 
 
 class QueueError(Exception):
-    pass
+    """QueueError"""
+    # pass
 
 
 class Queue:
@@ -359,8 +367,7 @@ def create_graph(data):
     """
     line_list = []
     # split the data by new line
-    for line in sys.stdin:
-        line_list.append(line.strip())
+    line_list = data.split("\n")
     # get size of image and number of vertices
     size = line_list[0]
     num_vertices = line_list[1]
