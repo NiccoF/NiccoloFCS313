@@ -373,14 +373,13 @@ def create_graph(data):
     # create vertices - vertex info has the format "x,y,color"
     for i in range(num_vertices):
         vert_list = line_list[i+2].split(",")
-        print(vert_list[0])
         x = int(vert_list[0])
         y = int(vert_list[1])
         color = vert_list[2]
         new_graph.vertices.append(ColoredVertex(i, x, y, color))
     # create edges between vertices - edge info has the format "from_index,to_index"
     # connect vertex A to vertex B and the other way around
-    num_edges = line_list[num_vertices + 2]
+    num_edges = int(line_list[num_vertices + 2])
     for i in range(num_edges):
         edge_vertex_indexes = line_list[num_vertices + 3 + i].split(",")
         new_graph.vertices[edge_vertex_indexes[0]].add_edge(edge_vertex_indexes[1])
