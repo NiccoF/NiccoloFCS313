@@ -373,7 +373,7 @@ def create_graph(data):
     # create vertices - vertex info has the format "x,y,color"
     for i in range(num_vertices):
         vert_list = line_list[i+2].split(", ")
-        print(x)
+        print(vert_list[0])
         x = int(vert_list[0])
         y = int(vert_list[1])
         color = vert_list[2]
