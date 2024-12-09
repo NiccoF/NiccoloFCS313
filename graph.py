@@ -372,7 +372,7 @@ def create_graph(data):
     new_graph = ImageGraph(size)
     # create vertices - vertex info has the format "x,y,color"
     for i in range(num_vertices):
-        vert_list = line_list[i+2].split(", ")
+        vert_list = line_list[i+2].split(",")
         print(vert_list[0])
         x = int(vert_list[0])
         y = int(vert_list[1])
@@ -382,7 +382,7 @@ def create_graph(data):
     # connect vertex A to vertex B and the other way around
     num_edges = line_list[num_vertices + 2]
     for i in range(num_edges):
-        edge_vertex_indexes = line_list[num_vertices + 3 + i].split(", ")
+        edge_vertex_indexes = line_list[num_vertices + 3 + i].split(",")
         new_graph.vertices[edge_vertex_indexes[0]].add_edge(edge_vertex_indexes[1])
     # read search starting position and color
     last_line_list = line_list[len(line_list)].split(", ")
