@@ -268,6 +268,7 @@ class ImageGraph:
         matrix = [[0 for _ in range(5)] for _ in range(5)]
         for vertex in self.vertices:
             for edge in vertex.edges:
+                print(vertex.index, edge)
                 matrix[vertex.index][edge] = 1
         return matrix
 
