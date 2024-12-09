@@ -369,15 +369,15 @@ def create_graph(data):
     # split the data by new line
     line_list = data.split("\n")
     # get size of image and number of vertices
-    size = line_list[0]
-    num_vertices = line_list[1]
+    size = int(line_list[0])
+    num_vertices = int(line_list[1])
     # create the ImageGraph
     new_graph = ImageGraph(size)
     # create vertices - vertex info has the format "x,y,color"
     for i in range(num_vertices):
         vert_list = line_list[i+2].split(", ")
-        x = vert_list[0]
-        y = vert_list[1]
+        x = int(vert_list[0])
+        y = int(vert_list[1])
         color = vert_list[2]
         new_graph.vertices.append(ColoredVertex(i, x, y, color))
     # create edges between vertices - edge info has the format "from_index,to_index"
@@ -388,7 +388,7 @@ def create_graph(data):
         new_graph.vertices[edge_vertex_indexes[0]].add_edge(edge_vertex_indexes[1])
     # read search starting position and color
     last_line_list = line_list[len(line_list)].split(", ")
-    start_position = last_line_list[0]
+    start_position = int(last_line_list[0])
     start_color = last_line_list[1]
     # return the ImageGraph, starting position, and color as a tuple in this order.
     return (new_graph, start_position, start_color)
