@@ -305,9 +305,10 @@ class ImageGraph:
         while not vert_queue.is_empty():
             current = vert_queue.dequeue()
             for edge in current.edges:
-                if edge[1].color == original_color:
-                    edge.color = color
-                    vert_queue.enqueue(edge[1])
+                neighbor = self.vertices[edge]
+                if neighbor.color == original_color:
+                    neighbor.color = color
+                    vert_queue.enqueue(neighbor)
             current.color = color
 
 
@@ -346,9 +347,10 @@ class ImageGraph:
         while not vert_stack.is_empty():
             current = vert_stack.pop()
             for edge in current.edges:
-                if edge[1].color == original_color:
-                    edge.color = color
-                    vert_stack.push(edge[1])
+                neighbor = self.vertices[edge]
+                if neighbor.color == original_color:
+                    neighbor.color = color
+                    vert_stack.push(neighbor)
             current.color = color
 
 
