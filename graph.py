@@ -383,6 +383,7 @@ def create_graph(data):
     for i in range(num_edges):
         edge_vertex_indexes = line_list[num_vertices + 3 + i].split(",")
         new_graph.vertices[int(edge_vertex_indexes[0])].add_edge(int(edge_vertex_indexes[1]))
+        new_graph.vertices[int(edge_vertex_indexes[1])].add_edge(int(edge_vertex_indexes[0]))
     # read search starting position and color
     last_line_index = num_vertices + num_vertices + 3
     last_line_list = line_list[last_line_index].split(",")
