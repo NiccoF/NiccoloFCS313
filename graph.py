@@ -268,7 +268,7 @@ class ImageGraph:
         matrix = [[0 for _ in range(5)] for _ in range(5)]
         for vertex in self.vertices:
             for edge in vertex.edges:
-                matrix[edge[0]][edge[1]] = 1
+                matrix[vertex.index][edge] = 1
         return matrix
 
     def bfs(self, start_index, color):
